@@ -14,7 +14,6 @@ export default class Homepage extends Component {
     return displayChores + " ";
   };
   render() {
-    this.mapData();
-    return <h1>{this.mapData()}</h1>;
+    return <h1>hello! {this.mapData()}</h1>;
   }
 }

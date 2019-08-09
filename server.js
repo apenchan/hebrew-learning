@@ -1,10 +1,14 @@
 const express = require("express");
 var path = require("path");
 const app = express();
+var mongoose = require("mongoose");
+var db = process.env.MONGODB_URI || "mongodb://localhost/citizen-cafe-learn";
+mongoose.connect(db);
+const HebrewToEnglish = require("./server/models/hebrewToEglish.js");
+
 var port = process.env.PORT || 3000;
 
 app.use(express.static("./src/index.js/"));
-app.use(express.static("./client/dist/"));
 // app.use(express.static('./controllers'));
 app.use(express.static("./node_modules"));
 app.use(express.static(path.join(__dirname, "build")));
