@@ -17,6 +17,28 @@ app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "./build/index.html"));
 });
 
+app.get('/hebrew', function(req, res){
+  HebrewToEnglish.find({}).exec(function(err, results){
+    if(err){
+      console.log(err)
+    } else {
+      console.log(results)
+      res.send(results)
+    }
+  })
+})
+
+// var hebrewToEglish1 = new HebrewToEnglish({
+//     hebrew: 'שום דבר',
+//     english: 'nothing',
+// })
+// hebrewToEglish1.save(function(err, data){
+//   if(err){
+//     console.log(err)
+//   } else {
+//     console.log(data)
+//   }
+// })
 app.listen(port);
 console.log(
   "Server is running on http://localhost:3000 or http://127.0.0.1:3000"

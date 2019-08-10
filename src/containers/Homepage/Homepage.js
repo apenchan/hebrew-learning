@@ -13,7 +13,9 @@ export default class Homepage extends Component {
     }
     return displayChores + " ";
   };
+  onClick = () =>{
+  }
   render() {
-    return <h1>hello! {this.mapData()}</h1>;
+    return <h1>Click here to start the test!</h1>;
   }
 }
